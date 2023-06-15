@@ -1,14 +1,13 @@
-'use strict';
+"use strict";
 
 /**
  * Sample problem
  * Here I'll illustrate the kinds of JS problems we could give.
- * The problem is always stated in JSDoc format. 
+ * The problem is always stated in JSDoc format.
  * You'll either use this or TypeScript for your real projects.
  * The TODO will point you to where you need to begin coding.
  * You can run `npm test` before, during, and after your coding.
  */
-
 
 /**
  * Calculates the sum of two numbers
@@ -21,5 +20,5 @@
 const sum = (num1, num2) => undefined;
 
 module.exports = {
-    sum
+  sum,
 };
