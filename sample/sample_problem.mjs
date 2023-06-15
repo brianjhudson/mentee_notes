@@ -17,8 +17,8 @@
  */
 
 // TODO: Fix the return statement to complete the function.
-const sum = (num1, num2) => undefined;
+export const sum = (num1, num2) => undefined;
 
-module.exports = {
+export default {
   sum,
 };
