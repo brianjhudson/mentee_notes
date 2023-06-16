@@ -51,20 +51,18 @@ const duplicates = array => {
   
   
   // TODO: Create a function to sort an array of objects by a property name
-  
-  
-  /** 
-   * Sorts an array of objects on a property name
-   * @param {Array} arr - An array of objects
-   * @param {string} propertyName
-   * @returns {Array} Sorted array
-  */
 
-  const sortBy = (arr, propertyName) => undefined;
-  
-  
-  // TODO: Invoke your function to test it
-  const data = [
+
+/** 
+ * Sorts an array of objects on a property name
+ * @param {Array} arr - An array of objects
+ * @param {string} propertyName
+ * @returns {Array} Sorted array
+*/
+
+
+// TODO: Invoke your function to test it
+const data = [
     {
       id: 1
       , name: 'Brian'
@@ -80,8 +78,64 @@ const duplicates = array => {
       , name: 'Vikram'
       , age: 8
     }
-  ]
-  console.log('Invoking my sorting function', sortBy(data, 'name'))
+  ];
+  
+  // Here we reviewed Array.prototype methods
+  // For each
+  data.forEach( (element, index, arr) => {
+    // console.log('Element', element)
+     ///console.log('Index', index)
+    // console.log('Arr', arr)
+     // For side effects only, not creating a new array
+  } )
+  
+  // Find
+  const firstFound = data.find( (element, index, arr) => element.name === 'Brian')
+  //console.log('Found', firstFound)
+  
+  // Map
+  const newArr = data.map( (element, index, arr) => {
+     //console.log('Element', element)
+     //console.log('Index', index)
+     //console.log('Arr', arr)
+     return {
+       name: element.name.toUpperCase(),
+       // age: element.age,
+       id: Math.random()
+     }
+   })
+  
+  
+  // For this first attempt, we returned a sorted array
+  // but only with the values requested by property name
+  
+  // Next, we need to return the entire object, but still sorted by property
+  const sortBy = (data, propertyName) => {
+    // See if I can return just the values for that property
+    // sortBy(data, 'age') => [43, 8, 11]
+    // sortBy(data, 'name') => ['Brian', 'Vikram', 'Arav']
+    const newArr = [];
+    for (let el of data) {
+      newArr.push(el[propertyName])
+    }
+    return newArr.sort( (firstEl, nextEl) => {
+      // -1, 1, 0
+      if ( firstEl < nextEl ) {
+        return -1
+      }
+      if ( firstEl > nextEl ) {
+        return 1
+      }
+      return 0;
+    } );
+  
+    
+    // Return an array
+  }
+  
+   // console.log('Invoking my sorting function', sortBy(data, 'name'))
+  console.log('Invoking my sorting function', sortBy(data, 'age'))
+  
   
   // TODO: Create a function to redact PII (just a name in this case)
   /** 
