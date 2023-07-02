@@ -171,7 +171,7 @@ const newArray = [1, 2, 3].map( (element, index, array) => {
   
   const users = [{name: 'Brian', score: 0}, {name: 'Maria', score: 1}]
   
-  const {numberOfPassingStudents: 0, numberOfFailingStudents: 0}
+  const data = {numberOfPassingStudents: 0, numberOfFailingStudents: 0}
   
   
   /** PRACTICE WITH REDUCE */
